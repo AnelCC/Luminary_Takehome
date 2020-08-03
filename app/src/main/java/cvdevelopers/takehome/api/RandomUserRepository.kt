@@ -3,7 +3,6 @@ package cvdevelopers.takehome.api
 import cvdevelopers.takehome.LuminaryTakeHomeApplication
 import cvdevelopers.takehome.models.Client
 import io.reactivex.Observable
-import io.reactivex.Single
 import javax.inject.Inject
 
 class RandomUserRepository {

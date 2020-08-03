@@ -9,7 +9,6 @@ import cvdevelopers.takehome.LuminaryTakeHomeApplication
 import cvdevelopers.takehome.api.RandomUserRepository
 import cvdevelopers.takehome.models.Client
 import cvdevelopers.takehome.models.database.UserDao
-import cvdevelopers.takehome.utils.preferences.PreferencesHelper
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable

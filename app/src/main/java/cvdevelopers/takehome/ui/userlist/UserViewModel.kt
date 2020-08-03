@@ -1,6 +1,5 @@
 package cvdevelopers.takehome.ui.userlist
 
-import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

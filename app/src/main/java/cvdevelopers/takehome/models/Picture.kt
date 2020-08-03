@@ -1,7 +1,12 @@
 package cvdevelopers.takehome.models
 
+import androidx.annotation.Nullable
+
 data class Picture(
-    val large: String,
-    val medium: String,
-    val thumbnail: String
+    @Nullable
+    val large: String?,
+    @Nullable
+    val medium: String?,
+    @Nullable
+    val thumbnail: String?
 )

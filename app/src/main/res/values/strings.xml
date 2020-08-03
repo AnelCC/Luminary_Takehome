@@ -11,4 +11,5 @@
     <string name="fetch_user">Fetching User</string>
 
     <string name="search">Search</string>
+    <string name="image_user_profile">image_user_profile</string>
 </resources>

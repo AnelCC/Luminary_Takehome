@@ -3,6 +3,7 @@ package cvdevelopers.takehome.utils.image
 import android.app.Application
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
+import cvdevelopers.takehome.api.RandomUserRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 

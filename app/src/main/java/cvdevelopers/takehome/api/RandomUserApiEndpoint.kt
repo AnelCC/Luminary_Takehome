@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface RandomUserApiEndpoint {
 
   @GET("/api/")
-  fun getClient(@Query("page") page: String, @Query("results") results: String = "15"): Single<ApiResponse>
+  fun getClient(@Query("page") page: String, @Query("results") results: String = "30"): Single<ApiResponse>
 
   companion object {
     val SERVER = "https://randomuser.me"

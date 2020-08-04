@@ -23,8 +23,9 @@ class UserListViewModel @Inject constructor(private val userDao: UserDao): ViewM
     @Inject
     lateinit var randomUserRepository:RandomUserRepository
     private lateinit var subscription: Disposable
-    val userListAdapter: UserListAdapter = UserListAdapter()
+    lateinit var userListAdapter: UserListAdapter;
     val userData = MutableLiveData<List<Client>>()
+    val selectedUser = MutableLiveData<Client>()
 
     init {
         LuminaryTakeHomeApplication.appComponent.inject(this)

@@ -12,4 +12,7 @@
 
     <string name="search">Search</string>
     <string name="image_user_profile">image_user_profile</string>
+
+    <string name="name">Name: </string>
+    <string name="email">Email: </string>
 </resources>

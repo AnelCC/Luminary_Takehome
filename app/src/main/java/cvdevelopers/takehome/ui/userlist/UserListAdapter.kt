@@ -10,7 +10,7 @@ import cvdevelopers.githubstalker.databinding.UserListItemBinding
 import cvdevelopers.takehome.models.Client
 
 
-class UserListAdapter (): RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
+class UserListAdapter (val itemListener: ItemListener) : RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
 
     private lateinit var userList:List<Client>
     private var position: Int = 0
@@ -25,6 +25,9 @@ class UserListAdapter (): RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(userList[position])
         this.position = position
+        holder.itemView.setOnClickListener {
+            itemListener.onItemClick(userList.get(position))
+        }
     }
 
     override fun getItemCount(): Int {
@@ -50,5 +53,9 @@ class UserListAdapter (): RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
           //  Picasso.with(binding.imgUserProfile.context).load(binding.itemViewModel!!.getImage().value).transform(CircleTransformation()).into(binding.imgUserProfile)
           //  ImageLoader(binding.itemViewModel!!.getApplicationContext() as Application  ).loadCircularImage(binding.itemViewModel!!.getImage().value!!,binding.imgUserProfile)
         }
+    }
+
+    interface ItemListener {
+        fun onItemClick(monster: Client)
     }
 }

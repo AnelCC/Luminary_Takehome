@@ -1,4 +1,4 @@
-package cvdevelopers.takehome.ui.userlist
+package cvdevelopers.takehome.ui.userdetail
 
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +12,7 @@ import androidx.navigation.Navigation
 
 import cvdevelopers.githubstalker.R
 import cvdevelopers.githubstalker.databinding.FragmentUserDetailsBinding
-import cvdevelopers.takehome.ui.base.ViewModelFactory
+import cvdevelopers.takehome.ui.userlist.UserListViewModel
 
 /**
  * A simple [Fragment] subclass.

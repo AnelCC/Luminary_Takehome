@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="cvdevelopers.takehome.ui.userlist.UserDetailsFragment"
+        android:name="cvdevelopers.takehome.ui.userdetail.UserDetailsFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_user_details" />
 </navigation>

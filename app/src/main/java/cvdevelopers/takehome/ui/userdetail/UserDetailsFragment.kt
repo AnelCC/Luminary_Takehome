@@ -13,11 +13,6 @@ import androidx.navigation.Navigation
 import cvdevelopers.githubstalker.R
 import cvdevelopers.githubstalker.databinding.FragmentUserDetailsBinding
 import cvdevelopers.takehome.ui.userlist.UserListViewModel
-import cvdevelopers.takehome.ui.userlist.UserViewModel
-
-/**
- * A simple [Fragment] subclass.
- */
 
 const val LOG_TAG = "UserDetailsFragment"
 

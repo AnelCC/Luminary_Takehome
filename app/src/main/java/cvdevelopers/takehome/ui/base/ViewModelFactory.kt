@@ -8,7 +8,6 @@ import cvdevelopers.takehome.ui.userlist.UserListViewModel
 
 import javax.inject.Inject
 
-
 class ViewModelFactory(private val activity: AppCompatActivity): ViewModelProvider.Factory, LifecycleObserver{
 
     @Inject

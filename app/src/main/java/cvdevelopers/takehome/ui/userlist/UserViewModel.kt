@@ -6,9 +6,7 @@ import androidx.lifecycle.ViewModel
 import cvdevelopers.takehome.models.Client
 import javax.inject.Inject
 
-
 class UserViewModel @Inject constructor() : ViewModel() {
-
     private val name = MutableLiveData<String>()
     private val imageUrl = MutableLiveData<String>()
 

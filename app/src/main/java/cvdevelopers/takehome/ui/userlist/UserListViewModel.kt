@@ -1,9 +1,7 @@
 package cvdevelopers.takehome.ui.userlist
 
 import android.util.Log
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModel
 import cvdevelopers.takehome.LuminaryTakeHomeApplication
 import cvdevelopers.takehome.api.RandomUserRepository
@@ -23,11 +21,9 @@ class UserListViewModel @Inject constructor(private val userDao: UserDao): ViewM
     @Inject
     lateinit var randomUserRepository:RandomUserRepository
     private lateinit var subscription: Disposable
-    lateinit var userListAdapter: UserListAdapter;
+    lateinit var userListAdapter: UserListAdapter
     val userData = MutableLiveData<List<Client>>()
-    //val selectedUser = MutableLiveData<Client>()
     var selectedUserInfo = MutableLiveData<Client>()
-    //lateinit var selectedUser: String
 
     init {
         LuminaryTakeHomeApplication.appComponent.inject(this)
@@ -61,11 +57,6 @@ class UserListViewModel @Inject constructor(private val userDao: UserDao): ViewM
                 )
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    private fun onDestroy() {
-        subscription.dispose()
-    }
-
     private fun onRetrieveUserListSuccess(clientList:List<Client>){
         userListAdapter.updateUserList(clientList)
     }
@@ -79,7 +70,6 @@ class UserListViewModel @Inject constructor(private val userDao: UserDao): ViewM
 
     fun updateUserInfo(selectedUser : String){
         CoroutineScope(Dispatchers.IO).launch {
-            Log.d("get users::", "getting users")
             selectedUserInfo.postValue(userDao.getUser(selectedUser))
         }
     }

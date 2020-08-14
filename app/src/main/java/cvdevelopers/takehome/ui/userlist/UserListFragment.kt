@@ -60,7 +60,6 @@ class UserListFragment : Fragment(), UserListAdapter.ItemListener {
     }
 
     override fun onItemClick(email: String) {
-       // viewModel.selectedUser = email
         val bundle = Bundle()
         bundle.putString("email", email)
         navController.navigate(R.id.action_fragmentUserList_to_detailFragment, bundle)

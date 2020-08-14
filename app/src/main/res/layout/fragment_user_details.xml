@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:text="@{viewModel.selectedUser.email}"
+            android:text="@{viewModel.selectedUserInfo.email}"
             app:layout_constraintStart_toEndOf="@+id/tv_email"
             app:layout_constraintTop_toTopOf="@+id/tv_email" />
 
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:text="@{viewModel.selectedUser.name.first}"
+            android:text="@{viewModel.selectedUserInfo.name.first}"
             app:layout_constraintStart_toEndOf="@+id/tv_name"
             app:layout_constraintTop_toTopOf="@+id/tv_name" />
 

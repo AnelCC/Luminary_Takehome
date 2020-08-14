@@ -18,4 +18,7 @@ interface UserDao {
 
     @Query("DELETE from user")
     fun deleteAll()
+
+    @Query("SELECT * FROM user WHERE email LIKE :expectedEmail")
+    fun getUser(expectedEmail: String): Client
 }

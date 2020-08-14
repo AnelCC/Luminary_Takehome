@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import cvdevelopers.githubstalker.R
 import cvdevelopers.githubstalker.databinding.FragmentUsersListBinding
-import cvdevelopers.takehome.models.Client
 import cvdevelopers.takehome.ui.base.ViewModelFactory
 import cvdevelopers.takehome.utils.preferences.PreferencesHelper
 
@@ -60,8 +59,10 @@ class UserListFragment : Fragment(), UserListAdapter.ItemListener {
         context?.let { PreferencesHelper.setItem(it, binding.viewModel!!.userListAdapter.getPosition()) }
     }
 
-    override fun onItemClick(client: Client) {
-        viewModel.selectedUser.value = client
-        navController.navigate(R.id.action_fragmentUserList_to_detailFragment)
+    override fun onItemClick(email: String) {
+       // viewModel.selectedUser = email
+        val bundle = Bundle()
+        bundle.putString("email", email)
+        navController.navigate(R.id.action_fragmentUserList_to_detailFragment, bundle)
     }
 }

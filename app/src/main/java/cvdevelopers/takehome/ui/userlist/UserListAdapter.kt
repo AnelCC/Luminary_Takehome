@@ -26,7 +26,8 @@ class UserListAdapter (val itemListener: ItemListener) : RecyclerView.Adapter<Us
         holder.bind(userList[position])
         this.position = position
         holder.itemView.setOnClickListener {
-            itemListener.onItemClick(userList.get(position))
+            //itemListener.onItemClick(userList.get(position))
+            itemListener.onItemClick(userList.get(position).email)
         }
     }
 
@@ -56,6 +57,6 @@ class UserListAdapter (val itemListener: ItemListener) : RecyclerView.Adapter<Us
     }
 
     interface ItemListener {
-        fun onItemClick(monster: Client)
+        fun onItemClick(monster: String)
     }
 }

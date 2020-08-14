@@ -25,7 +25,9 @@ class UserListViewModel @Inject constructor(private val userDao: UserDao): ViewM
     private lateinit var subscription: Disposable
     lateinit var userListAdapter: UserListAdapter;
     val userData = MutableLiveData<List<Client>>()
-    val selectedUser = MutableLiveData<Client>()
+    //val selectedUser = MutableLiveData<Client>()
+    var selectedUserInfo = MutableLiveData<Client>()
+    //lateinit var selectedUser: String
 
     init {
         LuminaryTakeHomeApplication.appComponent.inject(this)
@@ -72,6 +74,13 @@ class UserListViewModel @Inject constructor(private val userDao: UserDao): ViewM
         CoroutineScope(Dispatchers.IO).launch {
             userDao.deleteAll()
             loadData()
+        }
+    }
+
+    fun updateUserInfo(selectedUser : String){
+        CoroutineScope(Dispatchers.IO).launch {
+            Log.d("get users::", "getting users")
+            selectedUserInfo.postValue(userDao.getUser(selectedUser))
         }
     }
 }

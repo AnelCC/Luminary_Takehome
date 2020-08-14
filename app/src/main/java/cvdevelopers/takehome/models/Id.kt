@@ -1,9 +1,10 @@
 package cvdevelopers.takehome.models
 
-
-import com.google.gson.annotations.SerializedName
+import androidx.annotation.Nullable
 
 data class Id(
-    val name: String,
-    val value: String
+    @Nullable
+    val name: String?,
+    @Nullable
+    val value: String?
 )

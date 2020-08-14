@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:name="cvdevelopers.takehome.LuminaryTakeHomeApplication"
         android:theme="@style/AppTheme">
-        <activity android:name="cvdevelopers.takehome.MainActivity">
+        <activity android:name="cvdevelopers.takehome.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

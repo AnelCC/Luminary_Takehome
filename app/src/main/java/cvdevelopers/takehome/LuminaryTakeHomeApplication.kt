@@ -7,16 +7,17 @@ import cvdevelopers.takehome.dagger.DaggerApplicationComponent
 
 class LuminaryTakeHomeApplication : Application() {
 
-    val appComponent: ApplicationComponent by lazy {
-        DaggerApplicationComponent
-                .builder()
-                .applicationModule(ApplicationModule(this))
-                .build()
+    companion object {
+        lateinit var appComponent: ApplicationComponent
     }
 
     override fun onCreate() {
         super.onCreate()
-        appComponent.inject(this);
+
+        appComponent = DaggerApplicationComponent
+                .builder()
+                .applicationModule(ApplicationModule(this))
+                .build()
     }
 
 }

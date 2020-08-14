@@ -3,7 +3,9 @@ package cvdevelopers.takehome.dagger
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import cvdevelopers.takehome.LuminaryTakeHomeApplication
 import cvdevelopers.takehome.api.RandomUserApiEndpoint
+import cvdevelopers.takehome.api.RandomUserRepository
 import dagger.Module
 import dagger.Provides
 import io.reactivex.schedulers.Schedulers
@@ -28,4 +30,10 @@ class NetworkClientModule  {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build().create(RandomUserApiEndpoint::class.java)
+
+    @Provides
+    @Singleton
+    fun provideRepository (): RandomUserRepository {
+        return RandomUserRepository()
+    }
 }
